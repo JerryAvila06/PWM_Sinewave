@@ -23,7 +23,7 @@ module tt_um_PWM_Sine_UART (
     assign sw_11 = ui_in[4];
     assign uart_rx = ui_in[0];
     assign uart_tx = uo_out[0];
-    assign pwm_outx = uo_out[2]));
+    assign pwm_outx = uo_out[2];
     
     assign ui_out = 8'00000101;
     assign uio_oe = 8'b00000000;
