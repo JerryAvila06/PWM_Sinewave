@@ -16,7 +16,7 @@ module tt_um_PWM_Sine_UART (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-    wire rst, sw_01, sw_11, uart_rx, uart_tx, pwm_outx;
+    wire rst1, sw_01, sw_11, uart_rx, uart_tx, pwm_outx;
   // All output pins must be assigned. If not used, assign to 0.
     assign rst1 = ui_in[6];
     assign sw_01 = ui_in[5];
