@@ -4,6 +4,7 @@
  */
 
 `default_nettype none
+`include "impl_top.v"
 
 module tt_um_PWM_Sine_UART (
     input  wire [7:0] ui_in,    // Dedicated inputs
