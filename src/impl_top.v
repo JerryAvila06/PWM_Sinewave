@@ -198,7 +198,7 @@ reg [7:0] uart_data_string[3:0]; // Almacena los bytes recibidos como cadena (4 
 reg [3:0] byte_counter = 0; // Contador de bytes recibidos
 
 reg  [PAYLOAD_BITS-1:0]  led_reg;
-assign      led = led_reg;
+//assign      led = led_reg;
 
 assign uart_tx_data = uart_rx_data;
 assign uart_tx_en   = uart_rx_valid;
