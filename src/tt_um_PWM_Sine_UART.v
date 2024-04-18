@@ -17,9 +17,21 @@ module tt_um_PWM_Sine_UART (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
-    module PWM_Sine_UART(.clk1(clk) , rst(ui_in[6]) , sw_0(ui_in[5]) , sw_1(ui_in[4]) , uart_rxd(ui_in[0]) , uart_txd(uo_out[0]) , pwm_out(uo_out[2]));
+    //module PWM_Sine_UART(.clk1(clk) , rst(ui_in[6]) , sw_0(ui_in[5]) , sw_1(ui_in[4]) , uart_rxd(ui_in[0]) , uart_txd(uo_out[0]) , pwm_out(uo_out[2]));
     assign ui_out = 8'00000101;
     assign uio_eo = 8'b00000000;
     assign uio_out = 8'b00000000;
+
+
+    PWM_Sine_UART PWM_Sine_UART_inst
+    (
+    .clk1(clk),
+    .rst(ui_in[6]),
+    .sw_0(ui_in[5]), 
+    .sw_1(ui_in[4]), 
+    .uart_rxd(ui_in[0]),
+    .uart_txd(uo_out[0]),
+    .pwm_out(uo_out)
+    );
 
 endmodule
