@@ -30,7 +30,7 @@ module tt_um_PWM_Sine_UART (
     assign uio_out = 8'b00000000;
     
 
-    PWM_Sine_UART PWM_Sine_UART_inst
+    PWM_Sine_UART PWM_Sine_inst
     (
         .clk1(clk),
         .rst(rst1),
