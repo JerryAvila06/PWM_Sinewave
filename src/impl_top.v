@@ -1,4 +1,4 @@
-module PWM_Sine_UART(
+module impl_top(
     input               clk1         , // Top level system clock input.
     input               sw_0        , // Slide switches.
     input               sw_1        , // Slide switches.
