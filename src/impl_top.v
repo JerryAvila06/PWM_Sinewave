@@ -1,4 +1,4 @@
-module PWM_Sine_UART(
+module impl_top(
     input               clk1         , // Top level system clock input.
     input               sw_0        , // Slide switches.
     input               sw_1        , // Slide switches.
@@ -14,19 +14,19 @@ module PWM_Sine_UART(
 //integer i;
 //integer temp;
 //reg [7:0] uart_data_buffer [3:0]; // Buffer para almacenar los bytes recibidos
-reg [31:0] concatenated_data;     // Número entero formado por la concatenación de los bytes recibidos
+reg [31:0] concatenated_data;     // NÃºmero entero formado por la concatenaciÃ³n de los bytes recibidos
 reg [31:0] counter = 0; // Contador para generar la frecuencia de PWM
-reg [7:0] lut_addr = 0; // Dirección para la tabla de búsqueda (LUT)
+reg [7:0] lut_addr = 0; // DirecciÃ³n para la tabla de bÃºsqueda (LUT)
 reg clk_out = 0;
 reg [3:0] count_clk = 0;
-// Tabla de búsqueda para la forma de onda sinusoidal
+// Tabla de bÃºsqueda para la forma de onda sinusoidal
 reg [7:0] tabla [0:255]; // LUT de 256 valores
 integer freq;
 //integer data0;
 //integer data1;
 //integer data2;
 //integer data3;
-// Inicialización de la tabla de búsqueda con valores de una onda sinusoidal de amplitud 8-bit
+// InicializaciÃ³n de la tabla de bÃºsqueda con valores de una onda sinusoidal de amplitud 8-bit
 initial begin
 tabla[0] = 8'h80;
 tabla[1] = 8'h85;
@@ -222,16 +222,16 @@ always @(posedge clk1) begin
              
             //for (i = 0; i < 4; i = i + 1) begin
             if ((uart_data_buffer[0] >= 48) && (uart_data_buffer[0] <= 57)) begin
-                data0 = (uart_data_buffer[0] - 48) * 1000; // Convertir el carácter ASCII a su valor numérico
+                data0 = (uart_data_buffer[0] - 48) * 1000; // Convertir el carÃ¡cter ASCII a su valor numÃ©rico
             end
             if ((uart_data_buffer[1] >= 48) && (uart_data_buffer[1] <= 57)) begin
-                data1 = (uart_data_buffer[1] - 48) * 100; // Convertir el carácter ASCII a su valor numérico
+                data1 = (uart_data_buffer[1] - 48) * 100; // Convertir el carÃ¡cter ASCII a su valor numÃ©rico
             end
             if ((uart_data_buffer[2] >= 48) && (uart_data_buffer[2] <= 57)) begin
-                data2 = (uart_data_buffer[2] - 48) * 10; // Convertir el carácter ASCII a su valor numérico
+                data2 = (uart_data_buffer[2] - 48) * 10; // Convertir el carÃ¡cter ASCII a su valor numÃ©rico
             end
             if ((uart_data_buffer[3] >= 48) && (uart_data_buffer[3] <= 57)) begin
-                data3 = (uart_data_buffer[3] - 48) * 1; // Convertir el carácter ASCII a su valor numérico
+                data3 = (uart_data_buffer[3] - 48) * 1; // Convertir el carÃ¡cter ASCII a su valor numÃ©rico
             end
            // end
             concatenated_data <= data0 + data1 + data2 + data3;
@@ -239,11 +239,11 @@ always @(posedge clk1) begin
         end
         /*    
         if (concatenated_data >= 1495 && concatenated_data <= 1505) begin
-                // Si el número entero es igual a 1234, hacer algo...
+                // Si el nÃºmero entero es igual a 1234, hacer algo...
                 led_out <= 1;
         end
         if (concatenated_data >= 995 && concatenated_data <= 1005) begin
-                // Si el número entero es igual a 1234, hacer algo...
+                // Si el nÃºmero entero es igual a 1234, hacer algo...
                 led_out <= 0;
         end*/
         if(uart_rx_data[7:0] == 8'b00110001) begin
