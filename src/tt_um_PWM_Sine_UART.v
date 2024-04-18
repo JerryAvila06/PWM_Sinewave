@@ -38,7 +38,7 @@ module tt_um_PWM_Sine_UART (
         .sw_1(sw_11), 
         .uart_rxd(uart_rx),
         .uart_txd(uart_tx),
-        .pwm_out(pwmoutx)
+        .pwm_out(pwm_outx)
     );
 
 endmodule
