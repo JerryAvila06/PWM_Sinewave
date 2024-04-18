@@ -24,19 +24,19 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: "uart_rxd"
+  ui[0]: "uart_rx"
   ui[1]: "no use"
   ui[2]: "no use"
   ui[3]: "no use"
-  ui[4]: "sw_1"
-  ui[5]: "sw_0"
-  ui[6]: "rst"
+  ui[4]: "sw_11"
+  ui[5]: "sw_01"
+  ui[6]: "rst1"
   ui[7]: "no use"
 
   # Outputs
-  uo[0]: "uart_txd"
+  uo[0]: "uart_tx"
   uo[1]: "no use"
-  uo[2]: "pwm_out"
+  uo[2]: "pwm_outx"
   uo[3]: "no use"
   uo[4]: "no use"
   uo[5]: "no use"
