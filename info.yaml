@@ -31,7 +31,7 @@ pinout:
   ui[4]: "sw_1"
   ui[5]: "sw_0"
   ui[6]: "rst"
-  ui[7]: "clk1"
+  ui[7]: "no use"
 
   # Outputs
   uo[0]: "uart_txd"
