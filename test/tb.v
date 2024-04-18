@@ -24,7 +24,7 @@ module tb ();
   wire [7:0] uio_oe;
 
   // Replace tt_um_example with your module name:
-  example example (
+  tt_um_PWM_Sine_UART (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
