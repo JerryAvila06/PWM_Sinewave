@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = example.v
+PROJECT_SOURCES = tt_um_PWM_Sine_UART.v
 
 ifneq ($(GATES),yes)
 
